@@ -1,49 +1,58 @@
 public class OopsBannerApp {
 
-    public static String[] letterO() {
-        return new String[]{
-            " ***** ",
-            "*     *",
-            "*     *",
-            "*     *",
-            "*     *",
-            "*     *",
-            " ***** "
-        };
-    }
+    static class CharacterPattern {
+        char character;
+        String[] pattern;
 
-    public static String[] letterP() {
-        return new String[]{
-            " ***** ",
-            "*     *",
-            "*     *",
-            " ***** ",
-            "*      ",
-            "*      ",
-            "*      "
-        };
-    }
+        CharacterPattern(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
 
-    public static String[] letterS() {
-        return new String[]{
-            " ***** ",
-            "*      ",
-            "*      ",
-            " ***** ",
-            "      *",
-            "      *",
-            " ***** "
-        };
+        String getLine(int index) {
+            return pattern[index];
+        }
     }
 
     public static void main(String[] args) {
 
-        String[] O = letterO();
-        String[] P = letterP();
-        String[] S = letterS();
+        CharacterPattern O = new CharacterPattern('O', new String[]{
+                " ***** ",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                " ***** "
+        });
+
+        CharacterPattern P = new CharacterPattern('P', new String[]{
+                " ***** ",
+                "*     *",
+                "*     *",
+                " ***** ",
+                "*      ",
+                "*      ",
+                "*      "
+        });
+
+        CharacterPattern S = new CharacterPattern('S', new String[]{
+                " ***** ",
+                "*      ",
+                "*      ",
+                " ***** ",
+                "      *",
+                "      *",
+                " ***** "
+        });
 
         for (int i = 0; i < 7; i++) {
-            System.out.println(O[i] + "  " + O[i] + "  " + P[i] + "  " + S[i]);
+            System.out.println(
+                    O.getLine(i) + "  " +
+                    O.getLine(i) + "  " +
+                    P.getLine(i) + "  " +
+                    S.getLine(i)
+            );
         }
     }
 }
