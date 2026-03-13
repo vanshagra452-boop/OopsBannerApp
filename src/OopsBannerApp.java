@@ -1,5 +1,20 @@
-class OopsBannerApp {
+public class OopsBannerApp {
+
     public static void main(String[] args) {
-        System.out.println("hello");
+
+        String[] banner = {
+            String.join("", " ***** ", "  ", " ***** ", "  ", " ***** ", "  ", " ***** ", "  ", " ***** "),
+            String.join("", "*     *", "  ", "*     *", "  ", "*     *", "  ", "*     *", "  ", "*      "),
+            String.join("", "*     *", "  ", "*     *", "  ", "*     *", "  ", "*     *", "  ", "*      "),
+            String.join("", "*     *", "  ", "*     *", "  ", " ***** ", "  ", " ***** ", "  ", " ***** "),
+            String.join("", "*     *", "  ", "*     *", "  ", "*      ", "  ", "*      ", "  ", "      *"),
+            String.join("", "*     *", "  ", "*     *", "  ", "*      ", "  ", "*      ", "  ", "      *"),
+            String.join("", " ***** ", "  ", " ***** ", "  ", "*      ", "  ", "*      ", "  ", " ***** ")
+        };
+
+        for (String line : banner) {
+            System.out.println(line);
+        }
+
     }
 }
