@@ -1,22 +1,13 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class OopsBannerApp {
 
-    static class CharacterPattern {
-        char character;
-        String[] pattern;
+    static Map<Character, String[]> patterns = new HashMap<>();
 
-        CharacterPattern(char character, String[] pattern) {
-            this.character = character;
-            this.pattern = pattern;
-        }
+    static void initializePatterns() {
 
-        String getLine(int index) {
-            return pattern[index];
-        }
-    }
-
-    public static void main(String[] args) {
-
-        CharacterPattern O = new CharacterPattern('O', new String[]{
+        patterns.put('O', new String[]{
                 " ***** ",
                 "*     *",
                 "*     *",
@@ -26,7 +17,7 @@ public class OopsBannerApp {
                 " ***** "
         });
 
-        CharacterPattern P = new CharacterPattern('P', new String[]{
+        patterns.put('P', new String[]{
                 " ***** ",
                 "*     *",
                 "*     *",
@@ -36,7 +27,7 @@ public class OopsBannerApp {
                 "*      "
         });
 
-        CharacterPattern S = new CharacterPattern('S', new String[]{
+        patterns.put('S', new String[]{
                 " ***** ",
                 "*      ",
                 "*      ",
@@ -45,14 +36,22 @@ public class OopsBannerApp {
                 "      *",
                 " ***** "
         });
+    }
+
+    static void renderBanner(String word) {
 
         for (int i = 0; i < 7; i++) {
-            System.out.println(
-                    O.getLine(i) + "  " +
-                    O.getLine(i) + "  " +
-                    P.getLine(i) + "  " +
-                    S.getLine(i)
-            );
+            for (char c : word.toCharArray()) {
+                System.out.print(patterns.get(c)[i] + "  ");
+            }
+            System.out.println();
         }
+    }
+
+    public static void main(String[] args) {
+
+        initializePatterns();
+
+        renderBanner("OOPS");
     }
 }
