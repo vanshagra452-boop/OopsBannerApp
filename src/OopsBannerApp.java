@@ -1,20 +1,49 @@
 public class OopsBannerApp {
 
+    public static String[] letterO() {
+        return new String[]{
+            " ***** ",
+            "*     *",
+            "*     *",
+            "*     *",
+            "*     *",
+            "*     *",
+            " ***** "
+        };
+    }
+
+    public static String[] letterP() {
+        return new String[]{
+            " ***** ",
+            "*     *",
+            "*     *",
+            " ***** ",
+            "*      ",
+            "*      ",
+            "*      "
+        };
+    }
+
+    public static String[] letterS() {
+        return new String[]{
+            " ***** ",
+            "*      ",
+            "*      ",
+            " ***** ",
+            "      *",
+            "      *",
+            " ***** "
+        };
+    }
+
     public static void main(String[] args) {
 
-        String[] banner = {
-            String.join("", " ***** ", "  ", " ***** ", "  ", " ***** ", "  ", " ***** ", "  ", " ***** "),
-            String.join("", "*     *", "  ", "*     *", "  ", "*     *", "  ", "*     *", "  ", "*      "),
-            String.join("", "*     *", "  ", "*     *", "  ", "*     *", "  ", "*     *", "  ", "*      "),
-            String.join("", "*     *", "  ", "*     *", "  ", " ***** ", "  ", " ***** ", "  ", " ***** "),
-            String.join("", "*     *", "  ", "*     *", "  ", "*      ", "  ", "*      ", "  ", "      *"),
-            String.join("", "*     *", "  ", "*     *", "  ", "*      ", "  ", "*      ", "  ", "      *"),
-            String.join("", " ***** ", "  ", " ***** ", "  ", "*      ", "  ", "*      ", "  ", " ***** ")
-        };
+        String[] O = letterO();
+        String[] P = letterP();
+        String[] S = letterS();
 
-        for (String line : banner) {
-            System.out.println(line);
+        for (int i = 0; i < 7; i++) {
+            System.out.println(O[i] + "  " + O[i] + "  " + P[i] + "  " + S[i]);
         }
-
     }
 }
